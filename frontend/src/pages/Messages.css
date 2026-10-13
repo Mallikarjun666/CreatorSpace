@@ -1,0 +1,314 @@
+
+.cs-messages {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  height: min(76vh, 760px);
+  min-height: 480px;
+  overflow: hidden;
+  border: 1px solid var(--border-color, #e5e7eb);
+  border-radius: 16px;
+  background: var(--card-bg, #fff);
+  color: var(--text-color, #172033);
+}
+
+.cs-inbox {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-right: 1px solid #e5e7eb;
+}
+
+.cs-inbox-heading {
+  padding: 22px 18px 12px;
+}
+
+.cs-inbox-heading h1 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.cs-inbox-heading p,
+.cs-chat-header p {
+  margin: 5px 0 0;
+  color: #778195;
+  font-size: 13px;
+}
+
+.cs-search {
+  padding: 8px 14px 14px;
+}
+
+.cs-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 13px;
+  border: 1px solid #e2e7ef;
+  border-radius: 10px;
+  outline: none;
+  background: #f7f9fc;
+  color: inherit;
+}
+
+.cs-search input:focus,
+.cs-composer textarea:focus {
+  border-color: #6489ef;
+}
+
+.cs-conversation-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cs-conversation {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 14px;
+  border: 0;
+  border-top: 1px solid #f0f2f6;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.cs-conversation:hover,
+.cs-conversation.active {
+  background: #f0f5ff;
+}
+
+.cs-avatar {
+  display: inline-flex;
+  flex: 0 0 42px;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e1eaff;
+  color: #315bb9;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.cs-conversation-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.cs-conversation-info strong {
+  font-size: 14px;
+}
+
+.cs-last-message {
+  overflow: hidden;
+  color: #778195;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cs-unread {
+  display: grid;
+  min-width: 20px;
+  height: 20px;
+  place-items: center;
+  padding: 0 5px;
+  border-radius: 12px;
+  background: #315fd5;
+  color: #fff;
+  font-size: 11px;
+}
+
+.cs-chat {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.cs-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e8ebf1;
+}
+
+.cs-chat-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.cs-chat-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  padding: 22px;
+  background: #fafbfe;
+}
+
+.cs-message-row {
+  display: flex;
+  width: 100%;
+}
+
+.cs-message-row.incoming {
+  justify-content: flex-start;
+}
+
+.cs-message-row.outgoing {
+  justify-content: flex-end;
+}
+
+.cs-message-bubble {
+  max-width: min(75%, 460px);
+  padding: 11px 14px 8px;
+  border-radius: 16px;
+  overflow-wrap: anywhere;
+}
+
+.cs-message-bubble p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.cs-message-bubble time {
+  display: block;
+  margin-top: 6px;
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+.cs-message-row.incoming .cs-message-bubble {
+  border: 1px solid #e5e9f1;
+  border-bottom-left-radius: 4px;
+  background: #fff;
+}
+
+.cs-message-row.outgoing .cs-message-bubble {
+  border-bottom-right-radius: 4px;
+  background: #315fd5;
+  color: #fff;
+}
+
+.cs-composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid #e8ebf1;
+  background: #fff;
+}
+
+.cs-composer textarea {
+  flex: 1;
+  min-width: 0;
+  max-height: 120px;
+  resize: vertical;
+  padding: 12px 14px;
+  border: 1px solid #dfe4ed;
+  border-radius: 12px;
+  outline: none;
+  font: inherit;
+}
+
+.cs-composer button {
+  padding: 12px 19px;
+  border: 0;
+  border-radius: 10px;
+  background: #315fd5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cs-composer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.cs-empty {
+  padding: 20px;
+  color: #778195;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.cs-first-message,
+.cs-welcome {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cs-avatar-large {
+  width: 58px;
+  height: 58px;
+  font-size: 23px;
+}
+
+.cs-first-message h3 {
+  margin-bottom: 0;
+}
+
+.cs-first-message p,
+.cs-welcome p {
+  max-width: 340px;
+  color: #778195;
+  line-height: 1.6;
+}
+
+.cs-welcome {
+  padding: 24px;
+}
+
+.cs-welcome-icon {
+  display: grid;
+  width: 68px;
+  height: 68px;
+  place-items: center;
+  border: 2px solid #315fd5;
+  border-radius: 50%;
+  color: #315fd5;
+  font-size: 30px;
+}
+
+.cs-error {
+  margin: 10px 16px 0;
+  color: #c62828;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .cs-messages {
+    grid-template-columns: minmax(0, 1fr);
+    height: 72vh;
+    min-height: 420px;
+  }
+
+  .cs-inbox {
+    display: none;
+  }
+
+  .cs-message-bubble {
+    max-width: 88%;
+  }
+
+  .cs-chat-header,
+  .cs-chat-body {
+    padding: 14px;
+  }
+}
