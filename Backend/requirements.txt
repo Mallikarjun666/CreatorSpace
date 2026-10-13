@@ -7,3 +7,4 @@ pydantic[email]
 pydantic-settings
 PyJWT
 argon2-cffi
+python-multipart
